@@ -30,6 +30,12 @@
     .quiz-navbar [data-testid="quiz-navbar-buttons"]{display:flex!important;flex:1!important}
     [data-testid="quiz-navbar-next"]{flex:1!important;min-height:46px!important;font-weight:700!important}
     [data-testid="quiz-navbar-progress"],.quiz-navbar__hint{display:none!important}
+    .anna-brand,.anna-side{text-align:left!important}
+    [data-testid="quiz-question-title"]::after,[data-testid="quiz-mobile-question-title"]::after{content:"Выберите один вариант";display:block;margin:12px 0 0;color:#59615d;font:15px/1.4 "Segoe UI",sans-serif}
+    .answer-variants__variant .quiz-choice{flex-direction:column!important;align-items:flex-start!important;gap:8px!important}
+    .quiz-navbar,.quiz-navbar>div,[data-testid="quiz-navbar-buttons"]{width:100%!important;max-width:none!important}
+    [data-testid="quiz-navbar-buttons"]>div:has([data-testid="quiz-navbar-next"]){flex:1!important}
+    [data-testid="quiz-navbar-next"]{width:100%!important;justify-content:space-between!important;box-shadow:none!important;background:#47685a!important}
     .anna-side{display:none}
     @media(min-width:720px){.quiz-container:has(.quiz__questions){padding-right:36%!important;padding-top:65px!important}
       .anna-brand{position:absolute;left:0;right:0;top:0;height:65px;box-sizing:border-box}
