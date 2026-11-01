@@ -22,7 +22,7 @@
     <div class="intro"><p class="eyebrow">Новостройки Екатеринбурга</p><h1 id="hero-title">Получите подборку ЖК <em>под Ваши условия!</em></h1>
     <p>Одним хочется жить в центре, другим важен парк у дома.</p><p>Подберём ЖК Екатеринбурга под Ваш запрос, с учётом бюджета и возможностей покупки.</p><p class="invitation">Ответьте на пару вопросов.</p></div>
     <img class="hero-photo" src="/assets/towers.jpg" alt="Современные жилые дома и зелёный двор" width="606" height="688" fetchpriority="high">
-    <div class="quiz-card hero-quiz" id="quiz"><iframe id="selection-frame" src="https://quiz.marquiz.ru/6ac62af87318ce000e678108" title="Подбор квартиры — три вопроса Анны Ермаковой"></iframe><a class="quiz-direct" href="https://mrqz.me/6ac62af87318ce000e678108">Открыть квиз отдельно ↗</a></div>
+    <form id="quiz" class="quiz-card hero-quiz"><p class="quiz-label">ПОДБОР <span>/</span> 1 ИЗ 3</p><div class="progress" aria-hidden="true"><i></i><i></i><i></i></div><fieldset><legend>Какую квартиру вы рассматриваете?</legend><div class="answers"><label class="answer"><input type="radio" name="home" required value="Студия">Студия</label><label class="answer"><input type="radio" name="home" required value="1-комнатная">1-комнатная</label><label class="answer"><input type="radio" name="home" required value="2-комнатная">2-комнатная</label><label class="answer"><input type="radio" name="home" required value="3-комнатная и больше">3-комнатная и больше</label><label class="answer"><input type="radio" name="home" required value="Пока не определился(ась)">Пока не определился(ась)</label></div></fieldset><button class="next">Дальше <span>→</span></button></form>
     <p class="offer"><strong>Квартиры от 4 млн ₽</strong><span>Платёж от 19 300 ₽/мес.</span></p>
   </section>
   <section class="places wrap" id="place" aria-labelledby="place-title"><h2 id="place-title">Выбираем место для жизни</h2>
@@ -34,4 +34,4 @@
 </main>
 <footer><div class="wrap footer-main"><strong>Анна Ермакова</strong><span>Недвижимость / Екатеринбург</span><a href="https://max.ru/ermakova_rieltor" target="_blank" rel="noopener">Канал в MAX ↗</a></div></footer>
 <noscript><p class="wrap">Для подбора квартиры <a href="https://mrqz.me/6ac62af87318ce000e678108">откройте квиз Marquiz</a>.</p></noscript>
-</body></html>
+<dialog id="quiz-window" aria-label="Подбор квартиры"><button class="dismiss" aria-label="Закрыть">×</button><iframe id="selection-frame" title="Подбор квартиры с Анной Ермаковой"></iframe><a class="quiz-direct" href="https://mrqz.me/6ac62af87318ce000e678108">Открыть квиз отдельно ↗</a></dialog><script src="/quiz-window.js"></script></body></html>
