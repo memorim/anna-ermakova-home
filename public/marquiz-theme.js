@@ -36,7 +36,7 @@
     .quiz-navbar,.quiz-navbar>div,[data-testid="quiz-navbar-buttons"]{width:100%!important;max-width:none!important}
     [data-testid="quiz-navbar-buttons"]>div:has([data-testid="quiz-navbar-next"]){flex:1!important}
     [data-testid="quiz-navbar-next"]{width:100%!important;justify-content:space-between!important;box-shadow:none!important;background:#47685a!important}
-    .quiz-container_has-cookie > .z-cookie-notice{position:static!important;max-height:none!important;height:auto!important;width:100%!important;flex-shrink:0}
+    .quiz-container_has-cookie > .z-cookie-notice{position:relative!important;inset:auto!important;max-height:none!important;height:auto!important;width:100%!important;flex-shrink:0}
     .quiz-container_has-cookie > .z-cookie-notice button{background:#47685a!important;color:white!important;box-shadow:none!important}
     .quiz-container_has-cookie{display:flex!important;flex-direction:column;height:100dvh!important;min-height:0!important;box-sizing:border-box}.quiz-container_has-cookie > .quiz{flex:1;min-height:0!important;overflow-y:auto}.quiz-container_has-cookie > .z-cookie-notice{order:10}
     .anna-side{display:none}
