@@ -38,6 +38,21 @@
       .anna-side div{background:#304c44;padding:20px}.anna-side small{display:block;margin-top:6px}}
     @media(max-width:450px){.answer-variants__group{grid-template-columns:1fr!important}.quiz{padding:16px!important}}
   `;
+  style.textContent += `
+    .quiz-lead-form-scroll{max-width:480px;margin:auto;padding:20px;background:white;color:#304c44}
+    .quiz-lead-form-scroll .font-quiz-title{font:700 28px/1.16 "Segoe UI",sans-serif!important;text-align:left!important;color:#304c44!important}
+    .lead-form-fields{width:100%!important}.font-messengers-item{background:#e4ebdf!important;border-radius:24px!important;min-height:36px!important;padding:8px 13px!important;color:#304c44!important}
+    .anna-thanks{position:fixed;inset:0;z-index:9999;display:grid;align-content:center;gap:18px;background:white;color:#304c44;padding:clamp(22px,6vw,60px);font:16px/1.45 "Segoe UI",sans-serif}
+    .anna-thanks h2,.anna-thanks p{margin:0}.anna-thanks b{border-radius:100%;width:42px;height:42px;display:grid;place-items:center;background:#e4ebdf;font-size:24px}
+  `;
+  document.addEventListener('marquiz-finish', () => {
+    if(document.querySelector('.anna-thanks')) return;
+    const section=document.createElement('section');
+    section.className='anna-thanks';
+    section.setAttribute('role','status');
+    section.innerHTML='<b aria-hidden="true">✓</b><h2>Спасибо, запрос у меня.</h2><p>Свяжусь выбранным способом и уточню детали вашей подборки.</p>';
+    document.body.append(section);
+  });
   document.head.append(style);
   const titles = ['Какую квартиру вы рассматриваете?', 'Как планируете покупать квартиру?', 'Что для вас наиболее важно при покупке?'];
   let initial = new URLSearchParams(location.search).get('home');
