@@ -9,4 +9,7 @@ form.addEventListener('submit', event => {
   if (frame.src !== url) frame.src = url;
 });
 dialog.querySelector('.dismiss').onclick = () => dialog.close();
-dialog.addEventListener('close', () => form.querySelector('button').focus());
+document.querySelector('#open-selection').addEventListener('click', () => {
+  if (!frame.src) frame.src = origin + '/6ac62af87318ce000e678108';
+  dialog.showModal();
+});
