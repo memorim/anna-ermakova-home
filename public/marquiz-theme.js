@@ -48,9 +48,14 @@
     @media(max-width:450px){.answer-variants__group{grid-template-columns:1fr!important}.quiz{padding:16px!important}}
   `;
   style.textContent += `
-    .quiz-lead-form-scroll{max-width:480px;margin:auto;padding:20px;background:white;color:#304c44}
-    .quiz-lead-form-scroll .font-quiz-title{font:700 28px/1.16 "Segoe UI",sans-serif!important;text-align:left!important;color:#304c44!important}
-    .lead-form-fields{width:100%!important}.font-messengers-item{background:#e4ebdf!important;border-radius:24px!important;min-height:36px!important;padding:8px 13px!important;color:#304c44!important}
+    .quiz-lead-form-scroll{width:100%;max-width:740px;margin:auto;padding:clamp(12px,3vw,28px);box-sizing:border-box;background:white;color:#313438;--contact-accent:#4059c8}
+    .quiz-lead-form-scroll .font-quiz-title{font:700 clamp(24px,3vw,32px)/1.16 "Segoe UI",sans-serif!important;text-align:center!important;color:#303438!important}
+    .quiz-lead-form-scroll .max-w-lead-form{max-width:100%;border:1px solid #e2e4e7!important;border-radius:5px;background:white;box-shadow:0 8px 28px #1828200d!important;padding:clamp(16px,3vw,32px)}
+    .lead-form-fields{width:100%!important}.quiz-lead-form-scroll .quiz-input{min-height:48px;border-radius:5px}
+    .quiz-lead-form-scroll .font-messengers-item{border-radius:5px!important;background:#eee!important;min-height:54px!important;color:#303438!important}
+    .quiz-lead-form-scroll a{color:var(--contact-accent)}
+    .quiz-lead-form-scroll button[type=submit]{width:100%;background:#465fcb!important;color:white!important;border-radius:5px}
+    .quiz-lead-form-scroll button[type=submit]:disabled{background:#98a6e6!important}
     .anna-thanks{position:fixed;inset:0;z-index:9999;display:grid;align-content:center;gap:18px;background:white;color:#304c44;padding:clamp(22px,6vw,60px);font:16px/1.45 "Segoe UI",sans-serif}
     .anna-thanks h2,.anna-thanks p{margin:0}.anna-thanks b{border-radius:100%;width:42px;height:42px;display:grid;place-items:center;background:#e4ebdf;font-size:24px}
   `;
