@@ -59,6 +59,7 @@
     section.innerHTML='<b aria-hidden="true">✓</b><h2>Спасибо, запрос у меня.</h2><p>Свяжусь выбранным способом и уточню детали вашей подборки.</p>';
     document.body.append(section);
   });
+  style.textContent += ".anna-brand img{padding:0;background:transparent;border-radius:0;aspect-ratio:1;height:auto}";
   document.head.append(style);
   const titles = ['Какую квартиру вы рассматриваете?', 'Как планируете покупать квартиру?', 'Что для вас наиболее важно при покупке?'];
   let initial = new URLSearchParams(location.search).get('home');
@@ -68,7 +69,7 @@
     if (!root.querySelector('.anna-brand')) {
       const header = document.createElement('header');
       header.className = 'anna-brand';
-      header.innerHTML = `<img src="${site}/assets/kviko-logo.png" alt="КВИКО"><div><strong>Анна Ермакова</strong><small>Недвижимость · Екатеринбург</small></div><output></output>`;
+      header.innerHTML = `<img src="${site}/assets/brand-tile.svg" alt="КВИКО"><div><strong>Анна Ермакова</strong><small>Недвижимость · Екатеринбург</small></div><output></output>`;
       const side = document.createElement('aside');
       side.className = 'anna-side';
       side.innerHTML = '<div><strong>Дом для вас</strong><small>Подбор квартир в Екатеринбурге</small></div>';
