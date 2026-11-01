@@ -2,11 +2,7 @@
 (() => {
   'use strict';
   if (document.getElementById('anna-theme')) return;
-  const quizId = '6ac62af87318ce000e678108';
   const site = 'https://anna-ermakova-home.onrender.com';
-  const origins = [site, 'http://127.0.0.1:8097'];
-  let parentOrigin;
-  try {parentOrigin = new URL(document.referrer).origin;} catch {}
   const style = document.createElement('style'); style.id = 'anna-theme';
   style.textContent = `
     .quiz-container{background:#faf6ef!important;color:#304c44!important;font-family:"Segoe UI",Arial,sans-serif!important;padding:28px 40px!important;box-sizing:border-box!important;max-width:1100px!important;margin:auto!important}
@@ -23,36 +19,14 @@
     @media(max-width:700px){.quiz-container{padding:18px!important}.anna-brand{margin-bottom:20px;gap:12px}.anna-brand img{width:40px;height:40px}.anna-brand strong{font-size:14px}.anna-brand small{font-size:10px}.anna-brand button{font-size:12px;padding:5px}:is([data-testid="quiz-question-title"],[data-testid="quiz-mobile-question-title"]){font-size:25px!important}.answer-variants__group{grid-template-columns:1fr!important;gap:9px!important}.answer-variants__variant .quiz-choice{font-size:16px!important;min-height:54px!important;padding:13px!important}}
   `;
   document.head.append(style);
-  let pendingAnswer = null;
-  let applied = false;
   function decorate() {
     const root = document.querySelector('.quiz-container');
-    if (!root) return;
-    if (!root.querySelector('.anna-brand')) {
-      const header = document.createElement('header'); header.className = 'anna-brand';
-      header.innerHTML = `<img src="${site}/assets/kviko-logo.png" alt="КВИКО"><div><strong>Анна Ермакова</strong><small>Подбор квартир в Екатеринбурге</small></div>`;
-      if (window.parent !== window && origins.includes(parentOrigin)) {
-        const close = document.createElement('button'); close.type = 'button';close.textContent = 'Закрыть ×';
-        close.addEventListener('click', () => window.parent.postMessage({type:'anna-close',quizId}, parentOrigin));header.append(close);
-      }
-      root.prepend(header);
-      if (origins.includes(parentOrigin)) window.parent.postMessage({type:'anna-ready',quizId},parentOrigin);
-    }
-    if (!pendingAnswer || applied) return;
-    const title = root.querySelector('[data-testid="quiz-question-title"],[data-testid="quiz-mobile-question-title"]');
-    if (title?.textContent.trim() !== 'Какую квартиру вы рассматриваете?') return;
-    const choices = [...root.querySelectorAll('.answer-variants__variant')];
-    const choice = choices.find(el => el.textContent.trim() === pendingAnswer);
-    if (!choice) return;
-    applied = true;
-    choice.querySelector('input')?.click();
-    // ponytail: prefill only the first native Marquiz answer; all later answers and leads stay in Marquiz.
-    requestAnimationFrame(() => root.querySelector('[data-testid="quiz-navbar-next"]')?.click());
+    if (!root || root.querySelector('.anna-brand')) return;
+    const brand = document.createElement('header');
+    brand.className = 'anna-brand';
+    brand.innerHTML = `<img src="${site}/assets/kviko-logo.png" alt="КВИКО"><div><strong>Анна Ермакова</strong><small>Подбор квартир в Екатеринбурге</small></div>`;
+    root.prepend(brand);
   }
-  window.addEventListener('message', event => {
-    if (event.source !== window.parent || !origins.includes(event.origin) || event.data?.type !== 'anna-selection' || event.data.quizId !== quizId) return;
-    pendingAnswer = event.data.answer; decorate();
-  });
   new MutationObserver(decorate).observe(document.documentElement,{childList:true,subtree:true});
   decorate();
 })();

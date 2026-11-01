@@ -9,7 +9,7 @@
   <meta property="og:description" content="Анна Ермакова · Новостройки Екатеринбурга">
   <meta property="og:image" content="https://anna-ermakova-home.onrender.com/assets/towers.jpg">
   <link rel="icon" href="/assets/kviko-logo.png" type="image/png">
-  <link rel="stylesheet" href="/style.css"><script src="/quiz.js" defer></script>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <a class="skip" href="#main">К содержанию</a>
@@ -22,7 +22,7 @@
     <div class="intro"><p class="eyebrow">Новостройки Екатеринбурга</p><h1 id="hero-title">Получите подборку ЖК <em>под Ваши условия!</em></h1>
     <p>Одним хочется жить в центре, другим важен парк у дома.</p><p>Подберём ЖК Екатеринбурга под Ваш запрос, с учётом бюджета и возможностей покупки.</p><p class="invitation">Ответьте на пару вопросов.</p></div>
     <img class="hero-photo" src="/assets/towers.jpg" alt="Современные жилые дома и зелёный двор" width="606" height="688" fetchpriority="high">
-    <div class="quiz-card hero-quiz" data-quiz-card></div>
+    <div class="quiz-card hero-quiz" id="quiz"><iframe id="selection-frame" src="https://quiz.marquiz.ru/6ac62af87318ce000e678108" title="Подбор квартиры — три вопроса Анны Ермаковой"></iframe><a class="quiz-direct" href="https://mrqz.me/6ac62af87318ce000e678108">Открыть квиз отдельно ↗</a></div>
     <p class="offer"><strong>Квартиры от 4 млн ₽</strong><span>Платёж от 19 300 ₽/мес.</span></p>
   </section>
   <section class="places wrap" id="place" aria-labelledby="place-title"><h2 id="place-title">Выбираем место для жизни</h2>
@@ -30,9 +30,8 @@
     <article><img src="/assets/lounge.jpg" alt="Светлое пространство с креслами у больших окон" width="616" height="474" loading="lazy"><h3>Дом, в который приятно войти</h3><p>Мягкое кресло у окна, тёплый свет, место, где можно подождать друзей. Если вам нравятся такие холлы, учту это в подборке.</p></article></div>
   </section>
   <section class="quiet" aria-labelledby="quiet-title"><div class="wrap quiet-grid"><img src="/assets/seats.jpg" alt="Тихая терраса с креслами среди деревьев во дворе" width="446" height="299" loading="lazy"><div><h2 id="quiet-title">Время для себя</h2><p>Если любите посидеть с книгой на свежем воздухе, поищем дом с тихим двором. Покажу на фотографиях, где можно устроиться в тени, пока дети играют рядом.</p></div></div></section>
-  <section class="selection wrap" id="selection" aria-labelledby="selection-title"><div><h2 id="selection-title">Продолжим подбор</h2><p>Расскажите, какая квартира вам нужна. Подберём варианты с учётом ваших пожеланий и условий покупки.</p></div><div class="quiz-card" data-quiz-card></div></section>
+  <section class="selection wrap" id="selection" aria-labelledby="selection-title"><div><h2 id="selection-title">Продолжим подбор</h2><p>Расскажите, какая квартира вам нужна. Подберём варианты с учётом ваших пожеланий и условий покупки.</p></div><div class="quiz-card resume"><img src="/assets/kviko-logo.png" alt="КВИКО"><div><strong>Ваша подборка квартир</strong><p>Три вопроса об условиях покупки</p></div><a class="next" href="#quiz">Продолжить подбор <span>↑</span></a></div></section>
 </main>
 <footer><div class="wrap footer-main"><strong>Анна Ермакова</strong><span>Недвижимость / Екатеринбург</span><a href="https://max.ru/ermakova_rieltor" target="_blank" rel="noopener">Канал в MAX ↗</a></div></footer>
 <noscript><p class="wrap">Для подбора квартиры <a href="https://mrqz.me/6ac62af87318ce000e678108">откройте квиз Marquiz</a>.</p></noscript>
-<template id="quiz-template"><form><p class="quiz-label">Подбор <span>/</span> 1 из 3</p><div class="progress" aria-hidden="true"><i></i><i></i><i></i></div><fieldset><legend>Какую квартиру вы рассматриваете?</legend><div class="answers"></div></fieldset><button class="next" type="submit">Дальше <span aria-hidden="true">→</span></button><p class="quiz-status" aria-live="polite"></p></form></template>
 </body></html>
