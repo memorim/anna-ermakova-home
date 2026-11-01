@@ -5,7 +5,7 @@ const origin = 'https://quiz.marquiz.ru';
 form.addEventListener('submit', event => {
   event.preventDefault();
   dialog.showModal();
-  const url = origin + '/6ac62af87318ce000e678108#home=' + encodeURIComponent(form.elements.home.value);
+  const url = origin + '/6ac62af87318ce000e678108?home=' + encodeURIComponent(form.elements.home.value);
   if (frame.src !== url) frame.src = url;
 });
 dialog.querySelector('.dismiss').onclick = () => dialog.close();
