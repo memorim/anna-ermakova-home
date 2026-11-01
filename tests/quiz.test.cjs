@@ -5,11 +5,13 @@ const vm = require('node:vm');
 test('submit opens Marquiz with the selected apartment and preserves progress on reopen', () => {
  const events={}, frame={src:''}, form={elements:{home:{value:'2-комнатная'}},addEventListener:(e,f)=>events[e]=f};
  const dialog={showModal(){this.open=true},querySelector:()=>({}),addEventListener(){}};
- const elements={'#quiz':form,'#quiz-window':dialog,'#selection-frame':frame,'#open-selection':{addEventListener:(e,f)=>events[e]=f}};
- vm.runInNewContext(fs.readFileSync('public/quiz-window.js','utf8'),{document:{querySelector:s=>elements[s]}});
+ const statusBox={querySelector:()=>({})}; const elements={'#quiz-loading':statusBox,'#quiz':form,'#quiz-window':dialog,'#selection-frame':frame,'#open-selection':{addEventListener:(e,f)=>events[e]=f}};
+ vm.runInNewContext(fs.readFileSync('public/quiz-window.js','utf8'),{window:{addEventListener:(e,f)=>events[e]=f},setTimeout:()=>1,clearTimeout(){},document:{querySelector:s=>elements[s]}});
  events.click(); assert.equal(new URL(frame.src).search,'');
  events.submit({preventDefault(){}});
  assert.ok(dialog.open);
+ events.message({origin:'https://example.org',source:frame.contentWindow,data:'anna-quiz-ready'}); assert.equal(statusBox.hidden,false);
+ events.message({origin:'https://quiz.marquiz.ru',source:frame.contentWindow,data:'anna-quiz-ready'}); assert.equal(statusBox.hidden,true);
  assert.equal(new URL(frame.src).searchParams.get('home'),'2-комнатная');
  assert.equal(new URL(frame.src).pathname,'/6ac62af87318ce000e678108');
  let reload=false;

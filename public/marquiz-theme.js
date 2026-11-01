@@ -38,7 +38,7 @@
     [data-testid="quiz-navbar-next"]{width:100%!important;justify-content:space-between!important;box-shadow:none!important;background:#47685a!important}
     .quiz-container_has-cookie > .z-cookie-notice{position:static!important;max-height:none!important;height:auto!important;width:100%!important;flex-shrink:0}
     .quiz-container_has-cookie > .z-cookie-notice button{background:#47685a!important;color:white!important;box-shadow:none!important}
-    .quiz-container_has-cookie{height:auto!important;min-height:100dvh!important}
+    .quiz-container_has-cookie{display:flex!important;flex-direction:column;height:100dvh!important;min-height:0!important;box-sizing:border-box}.quiz-container_has-cookie > .quiz{flex:1;min-height:0!important;overflow-y:auto}.quiz-container_has-cookie > .z-cookie-notice{order:10}
     .anna-side{display:none}
     @media(min-width:720px){.quiz-container:has(.quiz__questions){padding-right:36%!important;padding-top:65px!important}
       .anna-brand{position:absolute;left:0;right:0;top:0;height:65px;box-sizing:border-box}
@@ -66,6 +66,7 @@
   document.head.append(style);
   const titles = ['Какую квартиру вы рассматриваете?', 'Как планируете покупать квартиру?', 'Что для вас наиболее важно при покупке?'];
   let initial = new URLSearchParams(location.search).get('home');
+  let ready = false;
   function decorate() {
     const root = document.querySelector('.quiz-container');
     if (!root) return;
@@ -79,6 +80,10 @@
       root.prepend(header); root.append(side);
     }
     const title = root.querySelector('[data-testid="quiz-question-title"],[data-testid="quiz-mobile-question-title"]');
+    if (!ready && (title?.textContent.trim() || root.querySelector('.lead-form-fields'))) {
+      ready = true;
+      window.parent.postMessage('anna-quiz-ready',site);
+    }
     const index = titles.indexOf(title?.textContent.trim());
     const count = root.querySelector('.anna-brand output');
     const caption = index < 0 ? '' : `Вопрос ${index+1} из 3`;
