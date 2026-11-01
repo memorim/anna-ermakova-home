@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Подборка ЖК под ваши условия — Анна Ермакова</title>
+  <meta name="description" content="Подбор новостроек Екатеринбурга с Анной Ермаковой. Ответьте на три вопроса и получите подборку ЖК с учётом ваших пожеланий и возможностей покупки.">
+  <meta name="theme-color" content="#304c44">
+  <meta property="og:title" content="Получите подборку ЖК под ваши условия!">
+  <meta property="og:description" content="Анна Ермакова · Новостройки Екатеринбурга">
+  <meta property="og:image" content="https://anna-ermakova-home.onrender.com/assets/towers.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css"><script src="/quiz.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">К содержанию</a>
+<header class="header wrap">
+  <a href="#" class="brand" aria-label="Анна Ермакова — начало страницы"><span class="brand-icon" aria-hidden="true">▥</span><span><strong>Анна Ермакова</strong><small>Недвижимость · Екатеринбург</small></span></a>
+  <nav aria-label="Основная навигация"><a href="#place">Как выбрать</a><a href="#selection">Подбор квартиры</a><a href="https://max.ru/ermakova_rieltor" target="_blank" rel="noopener">MAX ↗</a></nav>
+</header>
+<main id="main">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="intro"><p class="eyebrow">Новостройки Екатеринбурга</p><h1 id="hero-title">Получите подборку ЖК <em>под Ваши условия!</em></h1>
+    <p>Одним хочется жить в центре, другим важен парк у дома.</p><p>Подберём ЖК Екатеринбурга под Ваш запрос, с учётом бюджета и возможностей покупки.</p><p class="invitation">Ответьте на пару вопросов.</p></div>
+    <img class="hero-photo" src="/assets/towers.jpg" alt="Современные жилые дома и зелёный двор" width="606" height="688" fetchpriority="high">
+    <div class="quiz-card hero-quiz" data-quiz-card></div>
+    <p class="offer"><strong>Квартиры от 4 млн ₽</strong><span>Платёж от 19 300 ₽/мес.</span></p>
+  </section>
+  <section class="places wrap" id="place" aria-labelledby="place-title"><h2 id="place-title">Выбираем место для жизни</h2>
+    <div class="places-grid"><article><img src="/assets/block.jpg" alt="Благоустроенный двор с прогулочными дорожками и зеленью" width="596" height="474" loading="lazy"><h3>Двор для прогулок</h3><p>Посмотрим, где можно спокойно гулять и как далеко идти от подъезда до площадки.</p></article>
+    <article><img src="/assets/lounge.jpg" alt="Светлое пространство с креслами у больших окон" width="616" height="474" loading="lazy"><h3>Дом, в который приятно войти</h3><p>Мягкое кресло у окна, тёплый свет, место, где можно подождать друзей. Если вам нравятся такие холлы, учту это в подборке.</p></article></div>
+  </section>
+  <section class="quiet" aria-labelledby="quiet-title"><div class="wrap quiet-grid"><img src="/assets/seats.jpg" alt="Тихая терраса с креслами среди деревьев во дворе" width="446" height="299" loading="lazy"><div><h2 id="quiet-title">Время для себя</h2><p>Если любите посидеть с книгой на свежем воздухе, поищем дом с тихим двором. Покажу на фотографиях, где можно устроиться в тени, пока дети играют рядом.</p></div></div></section>
+  <section class="selection wrap" id="selection" aria-labelledby="selection-title"><div><h2 id="selection-title">Продолжим подбор</h2><p>Расскажите, какая квартира вам нужна. Подберём варианты с учётом ваших пожеланий и условий покупки.</p></div><div class="quiz-card" data-quiz-card></div></section>
+</main>
+<footer><div class="wrap footer-main"><strong>Анна Ермакова</strong><span>Недвижимость / Екатеринбург</span><a href="https://max.ru/ermakova_rieltor" target="_blank" rel="noopener">Канал в MAX ↗</a></div></footer>
+<noscript><p class="wrap">Для подбора квартиры <a href="https://mrqz.me/6ac62af87318ce000e678108">откройте квиз Marquiz</a>.</p></noscript>
+<template id="quiz-template"><form><p class="quiz-label">Подбор <span>/</span> 1 из 3</p><div class="progress" aria-hidden="true"><i></i><i></i><i></i></div><fieldset><legend>Какую квартиру вы рассматриваете?</legend><div class="answers"></div></fieldset><button class="next" type="submit">Дальше <span aria-hidden="true">→</span></button><p class="quiz-status" aria-live="polite"></p></form></template>
+</body></html>
