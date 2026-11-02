@@ -56,6 +56,9 @@ a:not(.brand):hover{text-decoration:underline;text-underline-offset:.22em}
   .hero-benefits p:last-child{font-size:23px}
   .hero-benefits>a{margin-left:0;width:100%;justify-content:space-between;border-top:1px solid #304c4426;padding-top:12px}
 }
+@media(max-width:480px){
+  .program-unit-monthly{display:block;margin-top:4px}
+}
 @media(max-width:380px){
   .program-card{padding:14px 10px}
   .program-value{font-size:27px}
