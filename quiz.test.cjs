@@ -6,7 +6,7 @@ test('submit opens Marquiz with the selected apartment and preserves progress on
  const events={}, frame={src:''}, form={elements:{home:{value:'2-комнатная'}},addEventListener:(e,f)=>events[e]=f};
  const dialog={showModal(){this.open=true},querySelector:()=>({}),addEventListener(){}};
  const statusBox={querySelector:()=>({})}; const elements={'#quiz-loading':statusBox,'#quiz':form,'#quiz-window':dialog,'#selection-frame':frame,'#open-selection':{addEventListener:(e,f)=>events[e]=f}};
- vm.runInNewContext(fs.readFileSync('public/quiz-window.js','utf8'),{window:{addEventListener:(e,f)=>events[e]=f},setTimeout:()=>1,clearTimeout(){},document:{querySelector:s=>elements[s]}});
+ vm.runInNewContext(fs.readFileSync('quiz-window.js','utf8'),{window:{addEventListener:(e,f)=>events[e]=f},setTimeout:()=>1,clearTimeout(){},document:{querySelector:s=>elements[s]}});
  events.click(); assert.equal(new URL(frame.src).search,'');
  events.submit({preventDefault(){}});
  assert.ok(dialog.open);

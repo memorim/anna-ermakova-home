@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   if (document.getElementById('anna-theme')) return;
-  const site = 'https://anna-ermakova-home.onrender.com';
+  const site = 'https://anna-ermakova.tuqo.app';
   const style = document.createElement('style'); style.id = 'anna-theme';
   style.textContent = `
     .quiz-container{background:#faf6ef!important;color:#304c44!important;font-family:"Segoe UI",Arial,sans-serif!important;padding:28px 40px!important;box-sizing:border-box!important;max-width:1100px!important;margin:auto!important}
@@ -43,7 +43,7 @@
     @media(min-width:720px){.quiz-container:has(.quiz__questions){padding-right:36%!important;padding-top:65px!important}
       .anna-brand{position:absolute;left:0;right:0;top:0;height:65px;box-sizing:border-box}
       .quiz-container:not(:has(.quiz__questions)){padding-top:65px!important}
-      .quiz-container:has(.quiz__questions) .anna-side{display:flex;position:absolute;top:65px;bottom:0;right:0;width:36%;flex-direction:column;justify-content:flex-end;background:#304c44 url("https://anna-ermakova-home.onrender.com/assets/towers.jpg") center/cover no-repeat;color:#fff}
+      .quiz-container:has(.quiz__questions) .anna-side{display:flex;position:absolute;top:65px;bottom:0;right:0;width:36%;flex-direction:column;justify-content:flex-end;background:#304c44 url("${site}/towers.jpg") center/cover no-repeat;color:#fff}
       .anna-side div{background:#304c44;padding:20px}.anna-side small{display:block;margin-top:6px}}
     @media(max-width:450px){.answer-variants__group{grid-template-columns:1fr!important}.quiz{padding:16px!important}}
   `;
@@ -78,7 +78,7 @@
     if (!root.querySelector('.anna-brand')) {
       const header = document.createElement('header');
       header.className = 'anna-brand';
-      header.innerHTML = `<img src="${site}/assets/brand-tile.svg" alt="КВИКО"><div><strong>Анна Ермакова</strong><small>Недвижимость · Екатеринбург</small></div><output></output>`;
+      header.innerHTML = `<img src="${site}/brand-tile.svg" alt="КВИКО"><div><strong>Анна Ермакова</strong><small>Недвижимость · Екатеринбург</small></div><output></output>`;
       const side = document.createElement('aside');
       side.className = 'anna-side';
       side.innerHTML = '<div><strong>Дом для вас</strong><small>Подбор квартир в Екатеринбурге</small></div>';
